@@ -3,7 +3,7 @@ const User = require("../Model/UserSchema");
 
 const createEmail = async (req, res) => {
   try {
-    const user = req.id;
+    const user = req._id;
     const { sendersaddress, receiversaddress, subject } = req.body;
     const createNewEmail = await Email.create({
       sendersaddress: sendersaddress,
@@ -43,7 +43,7 @@ const fetchSpecificEmail = async (req, res) => {
 };
 
 // update email feature doesn't exist apparently
-/*
+
 const updateEmail = async (req, res) => {
   try {
     const emailId = req.params.id;
@@ -71,7 +71,6 @@ const updateEmail = async (req, res) => {
     res.status(500).send("Error updating the email");
   }
 };
-*/
 
 const deleteEmail = async (req, res) => {
   try {

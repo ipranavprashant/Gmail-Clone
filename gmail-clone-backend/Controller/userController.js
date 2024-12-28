@@ -30,16 +30,16 @@ const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const user = await User.find({ email: email });
+    const userArray = await User.find({ email: email });
 
     // console.log(user);
-    const emp = user[0];
+    const user = userArray[0];
 
     if (!user) {
       returnres.sendStatus(401);
     }
 
-    const isRightPassword = bcrypt.compareSync(password, emp.password);
+    const isRightPassword = bcrypt.compareSync(password, user.password);
 
     if (!isRightPassword) {
       returnres.sendStatus(401);

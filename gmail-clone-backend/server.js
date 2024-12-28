@@ -7,7 +7,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
-const connectToMongo = require("./config/connectToMongo");
+const connectToMongo = require("./DB/connectToMongo");
 const userController = require("./Controller/userController");
 const emailController = require("./Controller/emailController");
 
@@ -38,15 +38,15 @@ app.get("/logout", userController.logout);
 app.get("/fetch-user/:id", userController.fetchUser);
 app.get("/fetch-all-users/", userController.fetchAllUsers);
 
-//routes specific to emails
+// //routes specific to emails
 app.post("/create-email", emailController.createEmail);
 app.get("/fetch-all-emails", emailController.fetchAllEmails);
 app.get("/fetch-specific-email/:id", emailController.fetchSpecificEmail);
 app.put("/update-email/:id", emailController.updateEmail);
 app.delete("/delete-email/:id", emailController.deleteEmail);
-app.get("/user-specific-emails/:id", emailController.emailsSpecificToAnUser);
+app.get("/user-specific-emails/:id", emailController.emailsSpecificToAUser);
 
-const port = 4010;
+const port = 5010;
 
 app.listen(port, () => {
   console.log(`The server is up and running at the port no: ${port}`);
