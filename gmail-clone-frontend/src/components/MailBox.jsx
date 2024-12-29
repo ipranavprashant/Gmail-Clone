@@ -18,12 +18,21 @@ const MailBox = () => {
     <>
       {showMailBox === "show" && (
         <>
-          <div className="absolute bottom-0 right-0 h-[65%] w-[35%] z-50 bg-white">
+          <div className="absolute bottom-0 right-0 h-[75%] w-[35%] z-50 bg-white">
             <div>
               <div className="flex justify-between bg-[#F2F6FB] h-[10%] items-center p-4">
                 <p>New Message</p>
                 <div className="flex gap-4">
-                  <FaRegWindowMinimize className="cursor-pointer" />
+                  <button
+                    onClick={() => {
+                      localStorage.setItem("ShowMailBox", "dontshow");
+                      navigate("/");
+                      window.location.reload();
+                    }}
+                  >
+                    <FaRegWindowMinimize className="cursor-pointer" />
+                  </button>
+
                   <RiExpandDiagonalLine className="cursor-pointer" />
 
                   <button
@@ -52,7 +61,7 @@ const MailBox = () => {
                   className="bg-white outline-none p-3"
                   placeholder="Message..."
                 ></textarea>
-                <button className="bg-[#0957D0] w-[20%] h-10 rounded-3xl text-white">
+                <button className="bg-[#0957D0] w-[20%] h-10 rounded-3xl text-white absolute left-3 bottom-3">
                   Send
                 </button>
               </div>
