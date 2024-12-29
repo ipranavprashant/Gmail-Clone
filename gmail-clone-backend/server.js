@@ -46,7 +46,7 @@ app.put("/update-email/:id", emailController.updateEmail);
 app.delete("/delete-email/:id", emailController.deleteEmail);
 app.get("/user-specific-emails/:id", emailController.emailsSpecificToAUser);
 
-const port = 5010;
+const port = 4010;
 
 app.listen(port, () => {
   console.log(`The server is up and running at the port no: ${port}`);

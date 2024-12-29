@@ -5,11 +5,12 @@ import { GoClock } from "react-icons/go";
 import { IoMdSend } from "react-icons/io";
 import { MdExpandMore } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
   const sideBarItems = [
     {
       logo: <MdInbox size={"20px"} />,
@@ -48,8 +49,15 @@ const Sidebar = () => {
   const [activeItem, setActiveItem] = useState(0);
   return (
     <>
-      <div className="p-4 w-[35%] lg:w-[15%]">
-        <button className="bg-[#C1E7FE] flex gap-2 w-36 h-12 rounded-2xl items-center p-4">
+      <div className="p-4 w-[35%] lg:w-[20%] sticky top-0">
+        <button
+          className="bg-[#C1E7FE] flex gap-2 w-36 h-12 rounded-2xl items-center p-4"
+          onClick={() => {
+            localStorage.setItem("ShowMailBox", "show");
+            navigate("/home/compose-mail");
+            window.location.reload();
+          }}
+        >
           <GoPencil size={"24px"} />
           Compose
         </button>

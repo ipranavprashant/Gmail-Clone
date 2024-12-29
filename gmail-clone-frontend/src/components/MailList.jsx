@@ -30,11 +30,320 @@ const MailList = () => {
       text: "Updates",
     },
   ];
+
+  const dummyEmails = [
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+    {
+      subject: "Talib loves Arroshi",
+      content:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur......",
+      date: "28 Dec",
+    },
+  ];
   const [activeOption, setActionOption] = useState(0);
   return (
     <>
-      <div className=" w-full p-4 bg-white">
-        <div className="flex justify-between p-4 rounded-lg h-12 items-center">
+      <div className=" w-full p-4 bg-white overflow-y-auto rounded-xl">
+        <div className="flex justify-between p-4 h-12 items-center">
           <div className="flex gap-6">
             <div className="flex gap-2">
               <MdCheckBoxOutlineBlank className="cursor-pointer" />
@@ -71,97 +380,24 @@ const MailList = () => {
             );
           })}
         </div>
-
-        <div className="flex justify-between border-b-1 h-12 p-2 items-center shadow-sm">
-          <div className="flex gap-6 items-center">
-            <MdOutlineCheckBoxOutlineBlank />
-            <IoStarOutline />
-            Subject
-          </div>
-          <div>
-            Email Content: Lorem ipsum dolor sit amet consectetur adipisicing
-            elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </div>
-          <div>28 Dec</div>
-        </div>
-
-        <div className="flex justify-between border-b-1 h-12 p-2 items-center shadow-sm">
-          <div className="flex gap-6 items-center">
-            <MdOutlineCheckBoxOutlineBlank />
-            <IoStarOutline />
-            Subject
-          </div>
-          <div>
-            Email Content: Lorem ipsum dolor sit amet consectetur adipisicing
-            elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </div>
-          <div>28 Dec</div>
-        </div>
-
-        <div className="flex justify-between border-b-1 h-12 p-2 items-center shadow-sm">
-          <div className="flex gap-6 items-center">
-            <MdOutlineCheckBoxOutlineBlank />
-            <IoStarOutline />
-            Subject
-          </div>
-          <div>
-            Email Content: Lorem ipsum dolor sit amet consectetur adipisicing
-            elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </div>
-          <div>28 Dec</div>
-        </div>
-
-        <div className="flex justify-between border-b-1 h-12 p-2 items-center shadow-sm">
-          <div className="flex gap-6 items-center">
-            <MdOutlineCheckBoxOutlineBlank />
-            <IoStarOutline />
-            Subject
-          </div>
-          <div>
-            Email Content: Lorem ipsum dolor sit amet consectetur adipisicing
-            elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </div>
-          <div>28 Dec</div>
-        </div>
-
-        <div className="flex justify-between border-b-1 h-12 p-2 items-center shadow-sm">
-          <div className="flex gap-6 items-center">
-            <MdOutlineCheckBoxOutlineBlank />
-            <IoStarOutline />
-            Subject
-          </div>
-          <div>
-            Email Content: Lorem ipsum dolor sit amet consectetur adipisicing
-            elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </div>
-          <div>28 Dec</div>
-        </div>
-
-        <div className="flex justify-between border-b-1 h-12 p-2 items-center shadow-sm">
-          <div className="flex gap-6 items-center">
-            <MdOutlineCheckBoxOutlineBlank />
-            <IoStarOutline />
-            Subject
-          </div>
-          <div>
-            Email Content: Lorem ipsum dolor sit amet consectetur adipisicing
-            elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </div>
-          <div>28 Dec</div>
-        </div>
-
-        <div className="flex justify-between border-b-1 h-12 p-2 items-center shadow-sm">
-          <div className="flex gap-6 items-center">
-            <MdOutlineCheckBoxOutlineBlank />
-            <IoStarOutline />
-            Subject
-          </div>
-          <div>
-            Email Content: Lorem ipsum dolor sit amet consectetur adipisicing
-            elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </div>
-          <div>28 Dec</div>
-        </div>
+        {dummyEmails.map((email, index) => {
+          return (
+            <>
+              <div
+                key={index}
+                className="flex justify-between border-b-1 h-12 p-2 items-center shadow-sm hover:scale-[1.009] cursor-pointer"
+              >
+                <div className="flex gap-6 items-center">
+                  <MdOutlineCheckBoxOutlineBlank className="text-gray-400" />
+                  <IoStarOutline className="text-gray-400" />
+                  {email.subject}
+                </div>
+                <div>{email.content}</div>
+                <div>{email.date}</div>
+              </div>
+            </>
+          );
+        })}
       </div>
     </>
   );
