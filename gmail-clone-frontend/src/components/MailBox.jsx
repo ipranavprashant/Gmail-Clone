@@ -32,6 +32,7 @@ const MailBox = () => {
     try {
       await useSendMail(formData, token, () => {
         setFormData({ to: "", subject: "", message: "" });
+        dispatch(closeInbox(true));
       });
     } catch (err) {
       console.error("Error sending mail:", err);

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 const Home = () => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-  // const token = useSelector((state) => state.auth.token);
+  // const isLoggedIn = true;
 
   return (
     <>
@@ -25,8 +25,17 @@ const Home = () => {
             You are logged out. Please{" "}
             <a href="/login" className="text-blue-500 underline">
               log in
+            </a>{" "}
+            or{" "}
+            <a href="/sign-up" className="text-blue-500 underline">
+              sign-up
             </a>
-            .
+            <p className="capitalize mt-12 mb-4">
+              PS: if you have to just check the application, the credentials
+              are:{" "}
+            </p>
+            <p>email: test@gmail.com</p>
+            <p>password: test</p>.
           </h1>
         </div>
       )}

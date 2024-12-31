@@ -4,12 +4,15 @@ import { FaRegStar } from "react-icons/fa";
 import { GoClock } from "react-icons/go";
 import { IoMdSend } from "react-icons/io";
 import { MdExpandMore } from "react-icons/md";
+import { RiLogoutBoxRLine } from "react-icons/ri";
+
 import { ToastContainer, toast } from "react-toastify";
 
 import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { openInbox } from "../store/uiSlice";
+import { logout } from "../store/authSlice";
 
 const Sidebar = () => {
   // const navigate = useNavigate();
@@ -38,7 +41,7 @@ const Sidebar = () => {
     },
   ];
   const handleAlertToast = (alert) => {
-    console.log(alert);
+    if (alert === "More selected!") alert = "No more items currently :)";
 
     toast(`${alert}`, {
       position: "top-center",
@@ -83,6 +86,16 @@ const Sidebar = () => {
             </div>
           );
         })}
+        <div
+          className="flex gap-4 w-[100%] p-4  mt-auto items-center hover:bg-slate-200 cursor-pointer rounded-3xl"
+          onClick={() => {
+            dispatch(logout());
+            handleAlertToast("Successfully logged out!");
+          }}
+        >
+          <RiLogoutBoxRLine size={"20px"} />
+          <p className="text-gray-600">Logout</p>
+        </div>
       </div>
       <ToastContainer />
     </>

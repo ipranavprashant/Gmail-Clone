@@ -1,11 +1,12 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+import BASE_URL from "../config";
 
 const useGetInbox = () => {
   const fetchInbox = async (userId, token) => {
     try {
       const res = await axios.get(
-        `http://localhost:4010/user-specific-emails/${userId}`,
+        `${BASE_URL}/user-specific-emails/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

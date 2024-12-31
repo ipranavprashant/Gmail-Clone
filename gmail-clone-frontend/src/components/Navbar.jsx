@@ -6,8 +6,11 @@ import { IoApps } from "react-icons/io5";
 import Avatar from "react-avatar";
 import { FaSearch } from "react-icons/fa";
 import { RiListSettingsLine } from "react-icons/ri";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const user = useSelector((state) => state.auth.user);
+
   return (
     <>
       <div className="flex w-full gap-8 p-5 justify-between items-center">
@@ -30,13 +33,17 @@ const Navbar = () => {
             <RiListSettingsLine className="mr-3" size={"24px"} />
           </div>
         </div>
+        <p>
+          Welcome, <span className="font-bold capitalize">{user.username}</span>
+          <p className="text-gray-500">({user.email})</p>
+        </p>
         <div className="flex gap-5">
           <IoHelpCircleOutline size={"24px"} className="cursor-pointer" />
           <IoMdSettings size={"24px"} className="cursor-pointer" />
           <RiGeminiFill size={"24px"} className="cursor-pointer" />
           <IoApps size={"24px"} className="cursor-pointer" />
           <Avatar
-            src="https://lh3.googleusercontent.com/a/ACg8ocIBPl6uEkMmQsbo_H3wB3dQ4e3vibANvz91qF_k7EUwnP1rASEd=s576-c-no"
+            src={user.profilepic}
             size="35"
             round={true}
             className="cursor-pointer"

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "../config";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ const Signup = () => {
         "The passwords do not match, kindly check before submitting!"
       );
     } else {
-      const res = await axios.post("http://localhost:4010/signup", newUser);
+      const res = await axios.post(`${BASE_URL}/signup`, newUser);
       console.log(res);
       if (res.status === 500) {
         console.log("Error signing up!");
