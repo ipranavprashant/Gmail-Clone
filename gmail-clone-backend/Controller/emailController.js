@@ -3,8 +3,8 @@ const User = require("../Model/UserSchema");
 
 const createEmail = async (req, res) => {
   try {
-    const user = req._id;
-    const { sendersaddress, receiversaddress, subject } = req.body;
+    const user = req.user._id;
+    const { sendersaddress, receiversaddress, subject, message } = req.body;
     const createNewEmail = await Email.create({
       sendersaddress: sendersaddress,
       receiversaddress: receiversaddress,
@@ -94,7 +94,7 @@ const emailsSpecificToAUser = async (req, res) => {
 
     res.json({ Emails: emails });
   } catch (err) {
-    console.log("Error fetching user specific emails!");
+    console.log("Error fetching user specific emails!" + err);
     res.status(500);
   }
 };

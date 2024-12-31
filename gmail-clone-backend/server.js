@@ -6,24 +6,27 @@ const express = require("express");
 
 const app = express();
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 const connectToMongo = require("./DB/connectToMongo");
 const userController = require("./Controller/userController");
 const emailController = require("./Controller/emailController");
 
 var bodyParser = require("body-parser");
+const requireAuth = require("./Middlewares/requireAuth");
 
 var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 app.use(jsonParser);
 app.use(urlencodedParser);
 const corsOptions = {
-  origin: "*",
+  origin: "http://localhost:5174",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 };
 app.use(cors(corsOptions));
+app.use(cookieParser());
 
 // app.all("/", (req, res) => {
 //   res.send("I was invoked!!");
@@ -39,12 +42,20 @@ app.get("/fetch-user/:id", userController.fetchUser);
 app.get("/fetch-all-users/", userController.fetchAllUsers);
 
 // //routes specific to emails
-app.post("/create-email", emailController.createEmail);
-app.get("/fetch-all-emails", emailController.fetchAllEmails);
-app.get("/fetch-specific-email/:id", emailController.fetchSpecificEmail);
-app.put("/update-email/:id", emailController.updateEmail);
-app.delete("/delete-email/:id", emailController.deleteEmail);
-app.get("/user-specific-emails/:id", emailController.emailsSpecificToAUser);
+app.post("/create-email", requireAuth, emailController.createEmail);
+app.get("/fetch-all-emails", requireAuth, emailController.fetchAllEmails);
+app.get(
+  "/fetch-specific-email/:id",
+  requireAuth,
+  emailController.fetchSpecificEmail
+);
+app.put("/update-email/:id", requireAuth, emailController.updateEmail);
+app.delete("/delete-email/:id", requireAuth, emailController.deleteEmail);
+app.get(
+  "/user-specific-emails/:id",
+  requireAuth,
+  emailController.emailsSpecificToAUser
+);
 
 const port = 4010;
 

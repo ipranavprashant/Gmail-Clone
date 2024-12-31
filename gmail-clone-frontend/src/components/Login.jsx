@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import axios from "axios";
+import { login } from "../store/authSlice";
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -23,30 +26,27 @@ const Login = () => {
       password: password,
     };
 
-    const res = await axios.post(
-      "http://localhost:4010/login",
-      loginCredentials
-    );
+    try {
+      const res = await axios.post(
+        "http://localhost:4010/login",
+        loginCredentials
+      );
 
-    if (res.status === 500) {
-      console.log("Error logging in!");
-    } else {
-      const token = res.data.token;
-      localStorage.setItem("Authorization", token);
-      console.log(token);
-      alert("Successfully Signed in!");
+      if (res.status === 200) {
+        const token = res.data.token;
 
-      navigate("/home");
-      window.location.reload();
+        // Save token to localStorage and update Redux state
+        localStorage.setItem("Authorization", token);
+        dispatch(login(token));
+
+        alert("Successfully Signed in!");
+        navigate("/home");
+      } else {
+        console.log("Error logging in!");
+      }
+    } catch (error) {
+      console.error("Login failed:", error);
     }
-
-    setEmail("");
-    setPassword("");
-
-    console.log(
-      "Submit was triggered and the received data is " + loginCredentials.email,
-      loginCredentials.password
-    );
   };
 
   return (

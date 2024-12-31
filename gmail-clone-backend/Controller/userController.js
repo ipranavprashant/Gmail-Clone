@@ -4,7 +4,6 @@ const bcrypt = require("bcryptjs");
 
 const signup = async (req, res) => {
   try {
-    console.log(req.body);
     const username = req.body.username;
     const email = req.body.email;
     const password = req.body.password;
@@ -42,13 +41,13 @@ const login = async (req, res) => {
     const isRightPassword = bcrypt.compareSync(password, user.password);
 
     if (!isRightPassword) {
-      returnres.sendStatus(401);
+      return res.sendStatus(401);
     }
 
     const expirationTime = Date.now() + 60 * 60 * 24 * 30 * 1000;
 
     const token = jwt.sign(
-      { sub: emp._id, expirationTime: expirationTime },
+      { sub: user._id, expirationTime: expirationTime },
       process.env.SECRETKEY
     );
 

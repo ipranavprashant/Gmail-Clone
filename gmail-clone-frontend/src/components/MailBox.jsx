@@ -1,22 +1,26 @@
 import { FaRegWindowMinimize } from "react-icons/fa";
 import { RiExpandDiagonalLine } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useState, useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { closeInbox } from "../store/uiSlice";
 
 const MailBox = () => {
-  const navigate = useNavigate();
-  const [showMailBox, setShowMailBox] = useState(false);
+  // const navigate = useNavigate();
+  // const [showMailBox, setShowMailBox] = useState(false);
 
-  useEffect(() => {
-    const boolValue = localStorage.getItem("ShowMailBox");
-    setShowMailBox(boolValue);
-    console.log(showMailBox);
-  }, [showMailBox]);
+  // useEffect(() => {
+  //   const boolValue = localStorage.getItem("ShowMailBox");
+  //   setShowMailBox(boolValue);
+  // }, [showMailBox]);
+
+  const dispatch = useDispatch();
+  const isInboxOpen = useSelector((state) => state.ui.isInboxOpen);
 
   return (
     <>
-      {showMailBox === "show" && (
+      {isInboxOpen && (
         <>
           <div className="absolute bottom-0 right-0 h-[75%] w-[35%] z-50 bg-white">
             <div>
@@ -25,9 +29,10 @@ const MailBox = () => {
                 <div className="flex gap-4">
                   <button
                     onClick={() => {
-                      localStorage.setItem("ShowMailBox", "dontshow");
-                      navigate("/");
-                      window.location.reload();
+                      // localStorage.setItem("ShowMailBox", "dontshow");
+                      // navigate("/");
+                      dispatch(closeInbox(true));
+                      // window.location.reload();
                     }}
                   >
                     <FaRegWindowMinimize className="cursor-pointer" />
@@ -37,9 +42,10 @@ const MailBox = () => {
 
                   <button
                     onClick={() => {
-                      localStorage.setItem("ShowMailBox", "dontshow");
-                      navigate("/");
-                      window.location.reload();
+                      // localStorage.setItem("ShowMailBox", "dontshow");
+                      // navigate("/");
+                      // window.location.reload();
+                      dispatch(closeInbox(true));
                     }}
                   >
                     <RxCross2 className="cursor-pointer" />

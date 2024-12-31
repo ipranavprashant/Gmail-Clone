@@ -7,10 +7,14 @@ import { MdExpandMore } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { openInbox } from "../store/uiSlice";
 
 const Sidebar = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  const dispatch = useDispatch();
+  // const isInboxOpen = useSelector((state) => state.ui.isInboxOpen);
   const sideBarItems = [
     {
       logo: <MdInbox size={"20px"} />,
@@ -53,9 +57,10 @@ const Sidebar = () => {
         <button
           className="bg-[#C1E7FE] flex gap-2 w-36 h-12 rounded-2xl items-center p-4"
           onClick={() => {
-            localStorage.setItem("ShowMailBox", "show");
-            navigate("/home/compose-mail");
-            window.location.reload();
+            // localStorage.setItem("ShowMailBox", "show");
+            // navigate("/home/compose-mail");
+            // window.location.reload();
+            dispatch(openInbox(false));
           }}
         >
           <GoPencil size={"24px"} />
@@ -63,21 +68,19 @@ const Sidebar = () => {
         </button>
         {sideBarItems.map((item, index) => {
           return (
-            <>
-              <div
-                key={index}
-                className={`flex gap-4 w-[100%] p-4 mt-2 h-10 items-center hover:bg-slate-200 cursor-pointer rounded-3xl ${
-                  index === activeItem && index !== 4 ? "bg-[#D3E2FD]" : ""
-                }`}
-                onClick={() => {
-                  setActiveItem(index);
-                  handleAlertToast(`${item.title} selected!`);
-                }}
-              >
-                {item.logo}
-                <p className="text-gray-600">{item.title}</p>
-              </div>
-            </>
+            <div
+              key={index}
+              className={`flex gap-4 w-[100%] p-4 mt-2 h-10 items-center hover:bg-slate-200 cursor-pointer rounded-3xl ${
+                index === activeItem && index !== 4 ? "bg-[#D3E2FD]" : ""
+              }`}
+              onClick={() => {
+                setActiveItem(index);
+                handleAlertToast(`${item.title} selected!`);
+              }}
+            >
+              {item.logo}
+              <p className="text-gray-600">{item.title}</p>
+            </div>
           );
         })}
       </div>
