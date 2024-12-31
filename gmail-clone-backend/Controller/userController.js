@@ -57,7 +57,7 @@ const login = async (req, res) => {
     });
 
     console.log("Successfully Signed in and the token is: ", token);
-    res.json({ token });
+    res.json({ user, token });
   } catch (err) {
     console.log("Error logging in! " + err);
   }

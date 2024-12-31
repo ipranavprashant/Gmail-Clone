@@ -2,9 +2,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { login } from "../store/authSlice";
+import { login, token } from "../store/authSlice";
+import BASE_URL from "../config";
 
 const Login = () => {
+  console.log(BASE_URL);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
@@ -27,17 +29,16 @@ const Login = () => {
     };
 
     try {
-      const res = await axios.post(
-        "http://localhost:4010/login",
-        loginCredentials
-      );
+      const res = await axios.post(`${BASE_URL}/login`, loginCredentials);
 
       if (res.status === 200) {
-        const token = res.data.token;
+        const userToken = res.data.token;
+        const user = res.data.user;
 
         // Save token to localStorage and update Redux state
         localStorage.setItem("Authorization", token);
-        dispatch(login(token));
+        dispatch(login(user));
+        dispatch(token(userToken));
 
         alert("Successfully Signed in!");
         navigate("/home");

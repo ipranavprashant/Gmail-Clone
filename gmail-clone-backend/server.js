@@ -19,18 +19,30 @@ var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 app.use(jsonParser);
 app.use(urlencodedParser);
+
 const corsOptions = {
-  origin: "http://localhost:5174",
+  origin: (origin, callback) => {
+    callback(null, origin || "*");
+  },
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 };
+app.use(cors(corsOptions));
+
 app.use(cors(corsOptions));
 app.use(cookieParser());
 
 // app.all("/", (req, res) => {
 //   res.send("I was invoked!!");
 // });
+
+app.get("/", (req, res) => {
+  res.json({
+    message:
+      "Gmail Backend : created by => Pranav Prashant (ipranavprashant@gmail.com)",
+  });
+});
 
 connectToMongo();
 
