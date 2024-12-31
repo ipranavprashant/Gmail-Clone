@@ -13,7 +13,7 @@ const App = () => {
         <Route path="/home/compose-mail" element={<Home />} />
         <Route path="/view-mail/:id" element={<ViewMail />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/sign-up" element={<Signup />} />
       </Routes>
     </>
   );
